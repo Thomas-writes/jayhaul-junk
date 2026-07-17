@@ -3,7 +3,7 @@ import "./globals.css";
 
 const title = "JayHaul Junk Removal | From Clutter to Clean";
 const description =
-  "JayHaul Junk Removal helps clear garages, furniture, appliances, rental cleanouts, and clutter with simple local hauling service.";
+  "JayHaul Junk Removal offers volume-based junk removal pricing starting at $100, with clear quotes before loading.";
 
 export const metadata: Metadata = {
   title,
