@@ -846,12 +846,41 @@ h3 {
   }
 
   .pricing-table {
-    min-width: 560px;
+    min-width: 0;
+    table-layout: fixed;
+  }
+
+  .pricing-table th:first-child,
+  .pricing-table td:first-child {
+    display: none;
+  }
+
+  .pricing-table th:nth-child(2),
+  .pricing-table td:nth-child(2) {
+    width: 58%;
+  }
+
+  .pricing-table th:last-child,
+  .pricing-table td:last-child {
+    width: 42%;
   }
 
   .pricing-table th,
   .pricing-table td {
-    padding: 15px 14px;
+    padding: 13px 10px;
+  }
+
+  .pricing-table th {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+
+  .pricing-table td {
+    font-size: 14px;
+  }
+
+  .pricing-table td:last-child {
+    font-size: 20px;
   }
 
   .pricing-note {

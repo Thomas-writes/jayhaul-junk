@@ -1,5 +1,6 @@
 const phoneDisplay = "913-309-6613";
 const phoneHref = "tel:9133096613";
+const smsHref = "sms:9133096613";
 const email = "thomas@savasten.com";
 
 const locations = [
@@ -93,8 +94,8 @@ export default function Home() {
               <a href="#process">Process</a>
               <a href="#authorization">Authorization</a>
               <a href="#contact">Contact</a>
-              <a className="mobile-menu-call" href={phoneHref}>
-                Call or Text {phoneDisplay}
+              <a className="mobile-menu-call" href={smsHref}>
+                Text {phoneDisplay}
               </a>
             </div>
           </details>
@@ -110,8 +111,8 @@ export default function Home() {
               quote before anything is loaded.
             </p>
             <div className="hero-actions">
-              <a className="button primary" href={phoneHref}>
-                Call or Text
+              <a className="button primary" href={smsHref}>
+                Text JayHaul
               </a>
               <a className="button secondary" href={`mailto:${email}`}>
                 Email JayHaul
@@ -309,7 +310,7 @@ export default function Home() {
             <span>Email</span>
             <strong className="email-value">{email}</strong>
           </a>
-          <a className="button primary full" href={phoneHref}>
+          <a className="button primary full" href={smsHref}>
             Start with a Text
           </a>
         </div>
