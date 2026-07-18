@@ -147,8 +147,8 @@ main {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.86fr);
-  gap: clamp(34px, 6vw, 80px);
+  grid-template-columns: minmax(0, 920px);
+  gap: 34px;
   align-items: center;
   padding-top: clamp(54px, 9vw, 112px);
 }
@@ -265,161 +265,6 @@ h3 {
   font-weight: 900;
   min-width: 0;
   overflow-wrap: anywhere;
-}
-
-.hero-visual {
-  position: relative;
-  display: grid;
-  gap: 16px;
-  align-content: center;
-}
-
-.brand-visual {
-  position: relative;
-  min-height: 430px;
-  display: grid;
-  align-content: center;
-  gap: 20px;
-  padding: clamp(30px, 5vw, 48px);
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 8px;
-  color: var(--white);
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 24px),
-    linear-gradient(180deg, rgba(18, 53, 91, 0.98), rgba(9, 32, 59, 0.98)),
-    var(--navy);
-  box-shadow: var(--shadow);
-}
-
-.brand-visual::before,
-.brand-visual::after {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-}
-
-.brand-visual::before {
-  top: -10%;
-  right: 12%;
-  width: 34px;
-  height: 120%;
-  background: var(--orange);
-  transform: rotate(16deg);
-  box-shadow: 56px 0 0 rgba(255, 255, 255, 0.08);
-}
-
-.brand-visual::after {
-  right: clamp(24px, 5vw, 46px);
-  bottom: clamp(24px, 5vw, 46px);
-  width: 76px;
-  height: 76px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.brand-visual-mark {
-  position: relative;
-  z-index: 1;
-  width: min(128px, 36vw);
-  aspect-ratio: 1;
-  display: grid;
-  place-items: center;
-  color: var(--white);
-  background: var(--orange);
-  border-radius: 8px;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: clamp(46px, 8vw, 72px);
-  font-weight: 900;
-  letter-spacing: 0;
-  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.18);
-}
-
-.brand-visual-copy,
-.brand-visual p,
-.brand-visual-footer {
-  position: relative;
-  z-index: 1;
-}
-
-.brand-visual-copy span,
-.brand-visual-copy strong {
-  display: block;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0;
-}
-
-.brand-visual-copy span {
-  font-size: clamp(44px, 7vw, 74px);
-  line-height: 0.92;
-}
-
-.brand-visual-copy strong {
-  margin-top: 9px;
-  color: rgba(255, 255, 255, 0.74);
-  font-size: clamp(16px, 2.5vw, 24px);
-  line-height: 1;
-  letter-spacing: 0.14em;
-}
-
-.brand-visual p {
-  max-width: 310px;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.86);
-  font-size: clamp(19px, 2.6vw, 26px);
-  font-weight: 900;
-  line-height: 1.14;
-}
-
-.brand-visual-footer {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  max-width: 520px;
-  margin-top: 4px;
-}
-
-.brand-visual-footer span {
-  min-height: 58px;
-  display: flex;
-  align-items: center;
-  padding: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 13px;
-  font-weight: 900;
-  line-height: 1.25;
-}
-
-.visual-card {
-  width: 100%;
-  padding: 18px 20px;
-  color: var(--navy);
-  background: var(--white);
-  border-left: 8px solid var(--orange);
-  border-radius: 8px;
-  box-shadow: 0 16px 32px rgba(18, 53, 91, 0.14);
-}
-
-.visual-card strong,
-.visual-card span {
-  display: block;
-}
-
-.visual-card strong {
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 20px;
-  line-height: 1.05;
-}
-
-.visual-card span {
-  margin-top: 8px;
-  color: var(--orange);
-  font-weight: 900;
 }
 
 .section {
@@ -846,7 +691,6 @@ h3 {
     display: none;
   }
 
-  .hero-grid,
   .split-section,
   .pricing-intro,
   .extra-grid,
@@ -854,10 +698,6 @@ h3 {
   .no-go-section,
   .contact-section {
     grid-template-columns: 1fr;
-  }
-
-  .hero-visual {
-    min-height: 0;
   }
 
   .quick-facts,
@@ -923,56 +763,6 @@ h3 {
 
   .quick-facts div {
     min-height: 88px;
-  }
-
-  .hero-visual {
-    min-height: 0;
-  }
-
-  .brand-visual {
-    min-height: 340px;
-    padding: 22px;
-    background:
-      linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 22px),
-      linear-gradient(180deg, rgba(18, 53, 91, 0.98), rgba(9, 32, 59, 0.98)),
-      var(--navy);
-  }
-
-  .brand-visual::before {
-    right: 4%;
-    width: 22px;
-    box-shadow: 38px 0 0 rgba(255, 255, 255, 0.08);
-  }
-
-  .brand-visual::after {
-    display: none;
-  }
-
-  .brand-visual-mark {
-    width: 94px;
-    font-size: 42px;
-  }
-
-  .brand-visual-copy span {
-    font-size: 40px;
-  }
-
-  .brand-visual-copy strong {
-    font-size: 15px;
-    letter-spacing: 0.12em;
-  }
-
-  .brand-visual-footer {
-    grid-template-columns: 1fr;
-    max-width: 260px;
-  }
-
-  .brand-visual-footer span {
-    min-height: 44px;
-  }
-
-  .visual-card {
-    box-shadow: none;
   }
 
   .section {
