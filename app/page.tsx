@@ -51,13 +51,6 @@ const trustPoints = [
   "Moving blankets, dollies, and straps",
 ];
 
-const damageSteps = [
-  "Before photos of walls, floors, door frames, stairs, and driveways",
-  "Work authorization before removal begins",
-  "Clear documentation of existing damage",
-  "Careful equipment use for bulky or awkward items",
-];
-
 const notAccepted = [
   "Paint, fuel, oil, pesticides, pool chemicals, solvents, propane tanks, fireworks, ammunition, or explosives",
   "Medical waste, needles, biohazards, human waste, or dead animals",
@@ -85,7 +78,7 @@ export default function Home() {
             <a href="#locations">Locations</a>
             <a href="#pricing">Pricing</a>
             <a href="#process">Process</a>
-            <a href="#safety">Safety</a>
+            <a href="#authorization">Authorization</a>
             <a href="#contact">Contact</a>
           </div>
           <details className="mobile-menu">
@@ -98,7 +91,7 @@ export default function Home() {
               <a href="#locations">Locations</a>
               <a href="#pricing">Pricing</a>
               <a href="#process">Process</a>
-              <a href="#safety">Safety</a>
+              <a href="#authorization">Authorization</a>
               <a href="#contact">Contact</a>
               <a className="mobile-menu-call" href={phoneHref}>
                 Call or Text {phoneDisplay}
@@ -262,25 +255,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section safety-section" id="safety">
-        <div className="section-heading">
-          <p className="eyebrow">Property Protection</p>
-          <h2>Careful removal starts before the first item moves.</h2>
+      <section className="section authorization-section" id="authorization">
+        <div>
+          <p className="eyebrow">Work Authorization</p>
+          <h2>Clear approval before anything gets loaded.</h2>
           <p className="section-lede">
-            On-site damage is one of the biggest risks in junk removal. JayHaul
-            keeps the process documented, clear, and careful from the start.
+            Every job starts with the items, route, and final price confirmed
+            up front, so the customer knows exactly what is being removed and
+            what it will cost.
           </p>
         </div>
-        <div className="safety-grid">
-          {damageSteps.map((step) => (
-            <article className="safety-card" key={step}>
-              <span aria-hidden="true" />
-              <p>{step}</p>
-            </article>
-          ))}
-        </div>
         <div className="auth-panel">
-          <h3>Work authorization</h3>
+          <h3>Before loading starts</h3>
           <p>
             Before work begins, customers approve the items to be removed, the
             final quote, and the route needed to move items through tight

@@ -515,7 +515,6 @@ h3 {
 }
 
 .fee-list,
-.safety-grid,
 .no-go-list {
   display: grid;
   gap: 12px;
@@ -622,49 +621,22 @@ h3 {
   font-weight: 900;
 }
 
-.safety-section {
+.authorization-section {
   width: min(1180px, 100%);
   --section-bg: var(--white);
-}
-
-.safety-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: 34px;
-}
-
-.safety-card {
-  min-height: 188px;
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--white);
-  box-shadow: 0 12px 30px rgba(18, 53, 91, 0.08);
-}
-
-.safety-card span {
-  display: block;
-  width: 42px;
-  height: 42px;
-  margin-bottom: 18px;
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, transparent 0 38%, var(--white) 38% 52%, transparent 52%),
-    var(--orange);
-}
-
-.safety-card p {
-  margin: 0;
-  color: var(--dark-gray);
-  font-weight: 800;
-  line-height: 1.48;
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(360px, 0.92fr);
+  gap: clamp(34px, 6vw, 80px);
+  align-items: center;
 }
 
 .auth-panel {
-  margin-top: 18px;
-  padding: 24px;
+  padding: clamp(24px, 4vw, 38px);
   color: var(--white);
   background: var(--navy);
   border-radius: 8px;
+  border-left: 8px solid var(--orange);
+  box-shadow: var(--shadow);
 }
 
 .auth-panel h3 {
@@ -781,13 +753,13 @@ h3 {
   .extra-grid,
   .trust-panel,
   .no-go-section,
-  .contact-section {
+  .contact-section,
+  .authorization-section {
     grid-template-columns: 1fr;
   }
 
   .quick-facts,
-  .location-grid,
-  .safety-grid {
+  .location-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -840,7 +812,6 @@ h3 {
   .quick-facts,
   .location-grid,
   .fee-list,
-  .safety-grid,
   .trust-list {
     grid-template-columns: 1fr;
   }
