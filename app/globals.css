@@ -263,6 +263,8 @@ h3 {
   margin: 10px 0 0;
   color: var(--white);
   font-weight: 900;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .hero-visual {
@@ -272,144 +274,123 @@ h3 {
   align-items: center;
 }
 
-.hero-photo {
-  width: 100%;
-  aspect-ratio: 1200 / 630;
-  object-fit: cover;
+.brand-visual {
+  position: relative;
+  min-height: 500px;
+  display: grid;
+  align-content: center;
+  gap: 22px;
+  padding: clamp(28px, 5vw, 52px);
+  overflow: hidden;
   border: 8px solid rgba(255, 255, 255, 0.88);
   border-radius: 8px;
-  box-shadow: var(--shadow);
-}
-
-.truck-scene {
-  position: relative;
-  min-height: 420px;
-  border-radius: 8px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0 53%, rgba(245, 245, 245, 0.95) 53% 100%),
-    linear-gradient(135deg, rgba(249, 115, 22, 0.72), rgba(255, 255, 255, 0.1));
-  box-shadow: var(--shadow);
-  overflow: hidden;
-}
-
-.truck-box {
-  position: absolute;
-  left: 30%;
-  right: 6%;
-  bottom: 112px;
-  height: 150px;
-  background: var(--navy);
-  border: 8px solid var(--white);
-  border-radius: 8px 8px 4px 4px;
-}
-
-.truck-cab {
-  position: absolute;
-  left: 8%;
-  bottom: 112px;
-  width: 31%;
-  height: 142px;
-  background: var(--white);
-  border-radius: 8px 0 0 4px;
-  clip-path: polygon(0 100%, 0 36%, 60% 36%, 100% 100%);
-}
-
-.truck-cab span {
-  position: absolute;
-  left: 34%;
-  top: 48px;
-  width: 44%;
-  height: 50px;
-  background: var(--navy);
-  border-radius: 4px 4px 0 0;
-}
-
-.truck-logo {
-  position: absolute;
-  left: 26px;
-  top: 30px;
-}
-
-.truck-logo strong {
-  display: block;
   color: var(--white);
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: clamp(34px, 4vw, 54px);
-  font-weight: 900;
-  line-height: 0.9;
-  text-transform: uppercase;
+  background:
+    linear-gradient(105deg, rgba(18, 53, 91, 0.98) 0 61%, rgba(249, 115, 22, 0.95) 61% 66%, rgba(245, 245, 245, 0.96) 66% 100%),
+    var(--navy);
+  box-shadow: var(--shadow);
 }
 
-.truck-logo span {
+.brand-visual::before,
+.brand-visual::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.brand-visual::before {
+  inset: 22px 22px auto auto;
+  width: 34%;
+  height: 72%;
+  border: 2px solid rgba(18, 53, 91, 0.15);
+  border-radius: 8px;
+}
+
+.brand-visual::after {
+  right: clamp(22px, 5vw, 52px);
+  bottom: clamp(22px, 5vw, 52px);
+  width: 110px;
+  height: 110px;
+  border-radius: 8px;
+  background: var(--orange);
+  opacity: 0.16;
+}
+
+.brand-visual-mark {
+  position: relative;
+  z-index: 1;
+  width: min(190px, 44vw);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  color: var(--white);
+  background: var(--orange);
+  border-radius: 8px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: clamp(54px, 9vw, 96px);
+  font-weight: 900;
+  letter-spacing: 0;
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.18);
+}
+
+.brand-visual-copy,
+.brand-visual p,
+.brand-visual-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.brand-visual-copy span,
+.brand-visual-copy strong {
   display: block;
-  margin-top: 8px;
-  color: rgba(255, 255, 255, 0.78);
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.brand-visual-copy span {
+  font-size: clamp(46px, 8vw, 82px);
+  line-height: 0.9;
+}
+
+.brand-visual-copy strong {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: clamp(18px, 3vw, 32px);
+  line-height: 1;
+  letter-spacing: 0.14em;
+}
+
+.brand-visual p {
+  max-width: 360px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 900;
+  line-height: 1.14;
+}
+
+.brand-visual-footer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 620px;
+  margin-top: 6px;
+}
+
+.brand-visual-footer span {
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.82);
   font-size: 13px;
   font-weight: 900;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.truck-stripe {
-  position: absolute;
-  left: 8%;
-  right: 6%;
-  bottom: 114px;
-  height: 20px;
-  background: var(--orange);
-  border-radius: 0 0 4px 4px;
-}
-
-.wheel {
-  position: absolute;
-  bottom: 66px;
-  width: 78px;
-  height: 78px;
-  border: 18px solid var(--dark-gray);
-  border-radius: 50%;
-  background: var(--light-gray);
-}
-
-.wheel-front {
-  left: 20%;
-}
-
-.wheel-back {
-  right: 18%;
-}
-
-.load {
-  position: absolute;
-  border-radius: 8px;
-  transform: rotate(var(--rotation));
-}
-
-.load-one {
-  --rotation: -8deg;
-  right: 16%;
-  top: 58px;
-  width: 84px;
-  height: 96px;
-  background: var(--orange);
-}
-
-.load-two {
-  --rotation: 6deg;
-  right: 31%;
-  top: 84px;
-  width: 106px;
-  height: 54px;
-  background: var(--white);
-}
-
-.load-three {
-  --rotation: 12deg;
-  right: 48%;
-  top: 70px;
-  width: 64px;
-  height: 72px;
-  background: var(--navy);
-  border: 5px solid rgba(255, 255, 255, 0.78);
+  line-height: 1.25;
 }
 
 .visual-card {
@@ -828,6 +809,13 @@ h3 {
   font-family: "Montserrat", Arial, sans-serif;
   font-size: clamp(24px, 4vw, 38px);
   line-height: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.email-value {
+  font-size: clamp(20px, 3.2vw, 34px);
 }
 
 .footer {
@@ -870,7 +858,7 @@ h3 {
   }
 
   .hero-visual {
-    min-height: 450px;
+    min-height: 0;
   }
 
   .quick-facts,
@@ -939,56 +927,47 @@ h3 {
   }
 
   .hero-visual {
-    min-height: 380px;
+    min-height: 0;
   }
 
-  .truck-scene {
-    min-height: 340px;
+  .brand-visual {
+    min-height: 390px;
+    padding: 22px;
+    border-width: 5px;
+    background:
+      linear-gradient(116deg, rgba(18, 53, 91, 0.99) 0 68%, rgba(249, 115, 22, 0.95) 68% 73%, rgba(245, 245, 245, 0.96) 73% 100%),
+      var(--navy);
   }
 
-  .truck-box {
-    left: 28%;
-    right: 5%;
-    height: 126px;
-    bottom: 86px;
+  .brand-visual-mark {
+    width: 116px;
   }
 
-  .truck-cab {
-    left: 5%;
-    bottom: 86px;
-    width: 34%;
-    height: 116px;
+  .brand-visual-copy span {
+    font-size: 43px;
   }
 
-  .truck-logo {
-    left: 16px;
-    top: 24px;
+  .brand-visual-copy strong {
+    font-size: 15px;
+    letter-spacing: 0.12em;
   }
 
-  .truck-logo strong {
-    font-size: 29px;
+  .brand-visual-footer {
+    grid-template-columns: 1fr;
+    max-width: 260px;
   }
 
-  .truck-logo span {
-    font-size: 10px;
-  }
-
-  .truck-stripe {
-    left: 5%;
-    right: 5%;
-    bottom: 88px;
-  }
-
-  .wheel {
-    bottom: 43px;
-    width: 62px;
-    height: 62px;
-    border-width: 14px;
+  .brand-visual-footer span {
+    min-height: 44px;
   }
 
   .visual-card {
-    right: 14px;
-    bottom: 18px;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    margin-top: 14px;
+    box-shadow: none;
   }
 
   .section {
@@ -1015,5 +994,13 @@ h3 {
   .contact-card,
   .trust-panel {
     padding: 20px;
+  }
+
+  .contact-row strong {
+    font-size: clamp(21px, 8vw, 30px);
+  }
+
+  .contact-row .email-value {
+    font-size: clamp(18px, 6vw, 24px);
   }
 }

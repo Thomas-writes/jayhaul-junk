@@ -127,12 +127,20 @@ export default function Home() {
             </dl>
           </div>
 
-          <div className="hero-visual">
-            <img
-              className="hero-photo"
-              src="/og.png"
-              alt="JayHaul Junk Removal truck outside a clean garage"
-            />
+          <div className="hero-visual" aria-label="JayHaul branded quote panel">
+            <div className="brand-visual">
+              <div className="brand-visual-mark">JH</div>
+              <div className="brand-visual-copy">
+                <span>JayHaul</span>
+                <strong>Junk Removal</strong>
+              </div>
+              <p>From Clutter to Clean.</p>
+              <div className="brand-visual-footer">
+                <span>Volume pricing</span>
+                <span>Quote before loading</span>
+                <span>Starting at $100</span>
+              </div>
+            </div>
             <div className="visual-card">
               <strong>Text a photo for a quick estimate.</strong>
               <span>{phoneDisplay}</span>
@@ -318,7 +326,7 @@ export default function Home() {
           </a>
           <a className="contact-row" href={`mailto:${email}`}>
             <span>Email</span>
-            <strong>{email}</strong>
+            <strong className="email-value">{email}</strong>
           </a>
           <a className="button primary full" href={phoneHref}>
             Start with a Text
