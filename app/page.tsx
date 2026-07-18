@@ -2,13 +2,12 @@ const phoneDisplay = "913-309-6613";
 const phoneHref = "tel:9133096613";
 const email = "thomas@savasten.com";
 
-const services = [
-  "Garage cleanouts",
-  "Furniture removal",
-  "Appliance pickup",
-  "Rental cleanouts",
-  "Yard debris hauling",
-  "Light demolition debris",
+const locations = [
+  "Lawrence",
+  "Baldwin",
+  "Overland Park",
+  "Olathe",
+  "KC area",
 ];
 
 const pricingRows = [
@@ -83,7 +82,7 @@ export default function Home() {
             </span>
           </a>
           <div className="nav-links">
-            <a href="#services">Services</a>
+            <a href="#locations">Locations</a>
             <a href="#pricing">Pricing</a>
             <a href="#process">Process</a>
             <a href="#safety">Safety</a>
@@ -96,7 +95,7 @@ export default function Home() {
               <span />
             </summary>
             <div className="mobile-menu-panel">
-              <a href="#services">Services</a>
+              <a href="#locations">Locations</a>
               <a href="#pricing">Pricing</a>
               <a href="#process">Process</a>
               <a href="#safety">Safety</a>
@@ -144,16 +143,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section service-band" id="services">
+      <section className="section location-band" id="locations">
         <div className="section-heading">
-          <p className="eyebrow">What We Haul</p>
-          <h2>Clear space without making it complicated.</h2>
+          <p className="eyebrow">Operating Locations</p>
+          <h2>Serving Lawrence, Baldwin, Overland Park, Olathe, and the KC area.</h2>
         </div>
-        <div className="service-grid">
-          {services.map((service) => (
-            <article className="service-card" key={service}>
+        <div className="location-grid">
+          {locations.map((location) => (
+            <article className="location-card" key={location}>
               <span aria-hidden="true" />
-              <h3>{service}</h3>
+              <h3>{location}</h3>
             </article>
           ))}
         </div>
