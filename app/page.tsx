@@ -89,9 +89,23 @@ export default function Home() {
             <a href="#safety">Safety</a>
             <a href="#contact">Contact</a>
           </div>
-          <a className="nav-call" href={phoneHref}>
-            {phoneDisplay}
-          </a>
+          <details className="mobile-menu">
+            <summary aria-label="Open navigation menu">
+              <span />
+              <span />
+              <span />
+            </summary>
+            <div className="mobile-menu-panel">
+              <a href="#services">Services</a>
+              <a href="#pricing">Pricing</a>
+              <a href="#process">Process</a>
+              <a href="#safety">Safety</a>
+              <a href="#contact">Contact</a>
+              <a className="mobile-menu-call" href={phoneHref}>
+                Call or Text {phoneDisplay}
+              </a>
+            </div>
+          </details>
         </nav>
 
         <div className="hero-grid">
@@ -140,10 +154,6 @@ export default function Home() {
             <article className="service-card" key={service}>
               <span aria-hidden="true" />
               <h3>{service}</h3>
-              <p>
-                Easy pickup for the bulky, awkward, or just plain unwanted stuff
-                taking over your space.
-              </p>
             </article>
           ))}
         </div>

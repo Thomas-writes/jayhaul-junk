@@ -63,7 +63,7 @@ main {
 
 .nav {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   gap: 28px;
   align-items: center;
   min-height: 72px;
@@ -112,37 +112,89 @@ main {
 }
 
 .nav-links {
-  justify-self: center;
+  justify-self: end;
   display: flex;
-  gap: 26px;
+  gap: clamp(24px, 4vw, 52px);
   color: rgba(255, 255, 255, 0.78);
-  font-size: 14px;
+  font-size: clamp(14px, 1.45vw, 18px);
   font-weight: 800;
 }
 
 .nav-links a,
-.nav-call,
 .button,
 .contact-row {
   transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
 }
 
 .nav-links a:hover,
-.nav-call:hover,
 .button:hover,
 .contact-row:hover {
   transform: translateY(-2px);
 }
 
-.nav-call {
-  display: inline-flex;
-  justify-content: center;
-  min-height: 44px;
-  padding: 11px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+.mobile-menu {
+  display: none;
+  position: relative;
+  justify-self: end;
+}
+
+.mobile-menu summary {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-content: center;
+  gap: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: 8px;
-  color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  list-style: none;
+}
+
+.mobile-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-menu summary span {
+  width: 20px;
+  height: 2px;
+  display: block;
+  background: var(--white);
+  border-radius: 999px;
+}
+
+.mobile-menu-panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 20;
+  width: min(78vw, 320px);
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.24);
+}
+
+.mobile-menu-panel a {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 12px;
+  border-radius: 6px;
+  color: var(--navy);
   font-weight: 900;
+}
+
+.mobile-menu-panel a:hover {
+  background: var(--navy-soft);
+}
+
+.mobile-menu-panel .mobile-menu-call {
+  margin-top: 8px;
+  color: var(--white);
+  background: var(--orange);
+  justify-content: center;
 }
 
 .hero-grid {
@@ -293,14 +345,17 @@ h3 {
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
   margin: 0 auto;
 }
 
 .service-card {
-  min-height: 220px;
-  padding: 24px;
+  min-height: clamp(160px, 18vw, 230px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(22px, 3.5vw, 38px);
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--white);
@@ -309,11 +364,17 @@ h3 {
 
 .service-card span {
   display: block;
-  width: 46px;
-  height: 8px;
-  margin-bottom: 24px;
+  width: clamp(50px, 7vw, 92px);
+  height: 9px;
+  margin-bottom: 34px;
   border-radius: 999px;
   background: var(--orange);
+}
+
+.service-card h3 {
+  max-width: 520px;
+  font-size: clamp(30px, 4.8vw, 54px);
+  line-height: 0.96;
 }
 
 .service-card p,
@@ -691,6 +752,10 @@ h3 {
     display: none;
   }
 
+  .mobile-menu {
+    display: block;
+  }
+
   .split-section,
   .pricing-intro,
   .extra-grid,
@@ -701,7 +766,6 @@ h3 {
   }
 
   .quick-facts,
-  .service-grid,
   .safety-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -716,10 +780,9 @@ h3 {
     min-height: 62px;
   }
 
-  .nav-call {
-    min-height: 40px;
-    padding: 9px 10px;
-    font-size: 13px;
+  .mobile-menu summary {
+    width: 42px;
+    height: 42px;
   }
 
   .brand-mark {
@@ -763,6 +826,18 @@ h3 {
 
   .quick-facts div {
     min-height: 88px;
+  }
+
+  .service-card {
+    min-height: 136px;
+  }
+
+  .service-card span {
+    margin-bottom: 22px;
+  }
+
+  .service-card h3 {
+    font-size: clamp(30px, 12vw, 46px);
   }
 
   .section {
