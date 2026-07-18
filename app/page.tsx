@@ -3,11 +3,11 @@ const phoneHref = "tel:9133096613";
 const email = "thomas@savasten.com";
 
 const locations = [
-  "Lawrence",
-  "Baldwin",
-  "Overland Park",
-  "Olathe",
-  "KC area",
+  { name: "Lawrence", note: "Primary local service area" },
+  { name: "Baldwin City", note: "Nearby cleanouts and pickups" },
+  { name: "Overland Park", note: "Johnson County service" },
+  { name: "Olathe", note: "Scheduled junk removal" },
+  { name: "Kansas City metro", note: "Quoted by distance and load size" },
 ];
 
 const pricingRows = [
@@ -145,14 +145,19 @@ export default function Home() {
 
       <section className="section location-band" id="locations">
         <div className="section-heading">
-          <p className="eyebrow">Operating Locations</p>
-          <h2>Serving Lawrence, Baldwin, Overland Park, Olathe, and the KC area.</h2>
+          <p className="eyebrow">Service Area</p>
+          <h2>Local junk removal across Lawrence and the surrounding metro.</h2>
+          <p className="section-lede">
+            JayHaul handles cleanouts and pickups throughout these nearby
+            communities, with clear quotes before loading starts.
+          </p>
         </div>
         <div className="location-grid">
           {locations.map((location) => (
-            <article className="location-card" key={location}>
+            <article className="location-card" key={location.name}>
               <span aria-hidden="true" />
-              <h3>{location}</h3>
+              <h3>{location.name}</h3>
+              <p>{location.note}</p>
             </article>
           ))}
         </div>

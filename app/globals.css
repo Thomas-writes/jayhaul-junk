@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -26,7 +25,7 @@ body {
   margin: 0;
   color: var(--dark-gray);
   background: var(--white);
-  font-family: "Inter", "Open Sans", Arial, sans-serif;
+  font-family: var(--font-inter), "Inter", "Open Sans", Arial, sans-serif;
 }
 
 a {
@@ -83,7 +82,7 @@ main {
   color: var(--white);
   background: var(--orange);
   border-radius: 8px;
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: var(--font-montserrat), "Montserrat", Arial, sans-serif;
   font-size: 18px;
   font-weight: 900;
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
@@ -95,7 +94,7 @@ main {
 }
 
 .brand-name {
-  font-family: "Montserrat", "Poppins", Arial, sans-serif;
+  font-family: var(--font-montserrat), "Montserrat", "Poppins", Arial, sans-serif;
   font-size: 22px;
   font-weight: 900;
   line-height: 1;
@@ -219,7 +218,7 @@ h2,
 h3 {
   margin: 0;
   color: inherit;
-  font-family: "Montserrat", "Poppins", "League Spartan", Arial, sans-serif;
+  font-family: var(--font-montserrat), "Montserrat", "Poppins", "League Spartan", Arial, sans-serif;
   letter-spacing: 0;
 }
 
@@ -320,14 +319,20 @@ h3 {
 }
 
 .section {
-  padding: 86px clamp(18px, 4vw, 54px);
+  --section-bg: var(--white);
+  position: relative;
+  padding: 96px clamp(18px, 4vw, 54px);
+  background: var(--section-bg);
+  border-top: 1px solid rgba(18, 53, 91, 0.1);
+  box-shadow: 0 0 0 100vmax var(--section-bg);
+  clip-path: inset(0 -100vmax);
 }
 
 .location-band,
 .trust-section {
   width: 100%;
   max-width: none;
-  background: var(--light-gray);
+  --section-bg: var(--light-gray);
 }
 
 .section-heading,
@@ -345,17 +350,17 @@ h3 {
 
 .location-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 18px;
   margin: 0 auto;
 }
 
 .location-card {
-  min-height: clamp(160px, 18vw, 230px);
+  min-height: 190px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: clamp(22px, 3.5vw, 38px);
+  padding: clamp(20px, 2.6vw, 28px);
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--white);
@@ -364,19 +369,28 @@ h3 {
 
 .location-card span {
   display: block;
-  width: clamp(50px, 7vw, 92px);
-  height: 9px;
-  margin-bottom: 34px;
+  width: 46px;
+  height: 8px;
+  margin-bottom: 28px;
   border-radius: 999px;
   background: var(--orange);
 }
 
 .location-card h3 {
   max-width: 520px;
-  font-size: clamp(30px, 4.8vw, 54px);
-  line-height: 0.96;
+  font-size: clamp(24px, 2.2vw, 32px);
+  line-height: 1;
 }
 
+.location-card p {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.42;
+}
+
+.location-card p,
 .step p,
 .section-lede {
   color: var(--muted);
@@ -385,6 +399,7 @@ h3 {
 
 .pricing-section {
   width: min(1180px, 100%);
+  --section-bg: var(--white);
 }
 
 .pricing-intro {
@@ -409,7 +424,7 @@ h3 {
 }
 
 .quote-card strong {
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: var(--font-montserrat), "Montserrat", Arial, sans-serif;
   font-size: clamp(22px, 3vw, 32px);
   line-height: 1.12;
 }
@@ -458,7 +473,7 @@ h3 {
 
 .pricing-table td:last-child {
   color: var(--orange);
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: var(--font-montserrat), "Montserrat", Arial, sans-serif;
   font-size: 24px;
   font-weight: 900;
 }
@@ -481,7 +496,7 @@ h3 {
 }
 
 .pricing-note strong {
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: var(--font-montserrat), "Montserrat", Arial, sans-serif;
   font-weight: 900;
 }
 
@@ -530,6 +545,11 @@ h3 {
   align-items: start;
 }
 
+.split-section,
+.no-go-section {
+  --section-bg: #fbfcfe;
+}
+
 .section-lede {
   max-width: 620px;
   margin: 22px 0 0;
@@ -560,7 +580,7 @@ h3 {
   color: var(--white);
   background: var(--navy);
   border-radius: 8px;
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: var(--font-montserrat), "Montserrat", Arial, sans-serif;
   font-weight: 900;
 }
 
@@ -604,6 +624,7 @@ h3 {
 
 .safety-section {
   width: min(1180px, 100%);
+  --section-bg: var(--white);
 }
 
 .safety-grid {
@@ -665,6 +686,10 @@ h3 {
   align-items: start;
 }
 
+.contact-section {
+  --section-bg: var(--white);
+}
+
 .no-go-list div {
   border-left: 6px solid var(--orange);
 }
@@ -706,7 +731,7 @@ h3 {
 
 .contact-row strong {
   color: var(--navy);
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: var(--font-montserrat), "Montserrat", Arial, sans-serif;
   font-size: clamp(24px, 4vw, 38px);
   line-height: 1;
   min-width: 0;
@@ -761,6 +786,7 @@ h3 {
   }
 
   .quick-facts,
+  .location-grid,
   .safety-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -832,7 +858,7 @@ h3 {
   }
 
   .location-card h3 {
-    font-size: clamp(30px, 12vw, 46px);
+    font-size: clamp(26px, 8vw, 34px);
   }
 
   .section {
