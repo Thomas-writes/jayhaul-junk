@@ -12,13 +12,14 @@ const locations = [
 ];
 
 const pricingRows = [
-  { load: "Minimum load", amount: "1/8 truck", price: "$100-$150" },
-  { load: "Quarter truck", amount: "1/4 truck", price: "$250" },
-  { load: "Three-eighths truck", amount: "3/8 truck", price: "$350" },
-  { load: "Half truck", amount: "1/2 truck", price: "$450" },
-  { load: "Five-eighths truck", amount: "5/8 truck", price: "$550" },
-  { load: "Three-quarter truck", amount: "3/4 truck", price: "$650" },
-  { load: "Full truck", amount: "10-foot truck", price: "$800" },
+  { load: "Minimum load", amount: "1/8 truck", price: "$100-$125" },
+  { load: "Quarter truck", amount: "1/4 truck", price: "$200" },
+  { load: "Three-eighths truck", amount: "3/8 truck", price: "$275" },
+  { load: "Half truck", amount: "1/2 truck", price: "$350" },
+  { load: "Five-eighths truck", amount: "5/8 truck", price: "$425" },
+  { load: "Three-quarter truck", amount: "3/4 truck", price: "$500" },
+  { load: "Seven-eighths truck", amount: "7/8 truck", price: "$575" },
+  { load: "Full truck", amount: "10-foot truck", price: "$650" },
 ];
 
 const extraFees = [
@@ -160,7 +161,7 @@ export default function Home() {
       <section className="section pricing-section" id="pricing">
         <div className="pricing-intro">
           <div>
-            <p className="eyebrow">Simple Pricing</p>
+            <p className="eyebrow">Lawrence Pricing</p>
             <h2>Junk removal starting at $100.</h2>
             <p className="section-lede">
               JayHaul prices by truck volume, so the quote is easy to
